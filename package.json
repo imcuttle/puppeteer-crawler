@@ -1,0 +1,41 @@
+{
+  "name": "puppeteer-crawler",
+  "version": "0.0.1",
+  "main": "index.js",
+  "description": "puppeteer crawler",
+  "author": "imcuttle",
+  "scripts": {
+    "server": "npm run build && node lib/server/index.js",
+    "test": "jest",
+    "build": "rimraf lib && babel src/ -D -d lib/",
+    "dev": "npm run babel -- -w",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "puppeteer",
+    "puppeteer-crawler"
+  ],
+  "license": "MIT",
+  "repository": "imcuttle/puppeteer-crawler",
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^22.4.3",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "express": "^4.16.3",
+    "jest": "^22.4.3",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "puppeteer": "^1.3.0"
+  }
+}
